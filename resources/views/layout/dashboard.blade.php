@@ -81,35 +81,66 @@
                     <input type="text" data-daterange="true" class="datepicker input w-full sm:w-56 box pl-10">
                 </div> --}}
             </div>
-            <div class="intro-y box p-5 mt-12 sm:mt-5">
-                <div class="flex flex-col xl:flex-row xl:items-center">
-                    <div class="dropdown relative xl:ml-auto mt-5 xl:mt-0">
-                        <button
-                            class="dropdown-toggle button font-normal border text-white relative flex items-center text-gray-700">
-                            Filter by Day <i data-feather="chevron-down" class="w-4 h-4 ml-2"></i> </button>
-                        <div class="dropdown-box mt-10 absolute w-40 top-0 xl:right-0 z-20">
-                            <div class="dropdown-box__content box p-2 overflow-y-auto h-32"> <a href=""
-                                    class="flex items-center block p-2 transition duration-300 ease-in-out bg-white hover:bg-gray-200 rounded-md">Senin</a>
-                                <a href=""
-                                    class="flex items-center block p-2 transition duration-300 ease-in-out bg-white hover:bg-gray-200 rounded-md">Selasa</a>
-                                <a href=""
-                                    class="flex items-center block p-2 transition duration-300 ease-in-out bg-white hover:bg-gray-200 rounded-md">Rabu</a>
-                                <a href=""
-                                    class="flex items-center block p-2 transition duration-300 ease-in-out bg-white hover:bg-gray-200 rounded-md">Kamis</a>
-                                <a href=""
-                                    class="flex items-center block p-2 transition duration-300 ease-in-out bg-white hover:bg-gray-200 rounded-md">Jum'at</a>
-                                <a href=""
-                                    class="flex items-center block p-2 transition duration-300 ease-in-out bg-white hover:bg-gray-200 rounded-md">Sabtu</a>
-                                <a href=""
-                                    class="flex items-center block p-2 transition duration-300 ease-in-out bg-white hover:bg-gray-200 rounded-md">Minggu</a>
+
+        </div>
+        <div class="col-span-12 sm:col-span-6 xl:col-span-6 intro-y">
+            <div class="box p-5">
+                <div class="flex justify-center items-end mt-6">
+                    <div class="trash-can mb-0">
+                        <div class="trash-lid bg-gray-600"></div>
+                        <div class="trash-handle bg-gray-600"></div>
+                        <div class="trash-body bg-gray-400 border-2 border-gray-600">
+                            <div class="trash-fill bg-green-500" id="trash-fill"></div>
+                            <div class="trash-lines">
+                                <div class="trash-line bg-gray-600"></div>
+                                <div class="trash-line bg-gray-600"></div>
+                                <div class="trash-line bg-gray-600"></div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="report-chart">
-                    <canvas id="report-line-chart" height="160" class="mt-6"></canvas>
-                </div>
             </div>
         </div>
+        <div class="col-span-12 sm:col-span-6 xl:col-span-6 intro-y">
+            <div class="box p-5">
+                <div class="flex justify-center items-end mt-6">
+                    <div class="trash-can mb-0">
+                        <div class="trash-lid bg-gray-600"></div>
+                        <div class="trash-handle bg-gray-600"></div>
+                        <div class="trash-body bg-gray-400 border-2 border-gray-600">
+                            <div class="trash-fill bg-green-500" id="trash-fill"></div>
+                            <div class="trash-lines">
+                                <div class="trash-line bg-gray-600"></div>
+                                <div class="trash-line bg-gray-600"></div>
+                                <div class="trash-line bg-gray-600"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
     </div>
+    <script>
+        const trashFill = document.getElementById("trash-fill");
+
+        function setProgress(value) {
+            updateProgress(value);
+        }
+
+        function updateProgress(value) {
+            trashFill.style.height = `${value}%`;
+
+            if (value < 30) {
+                trashFill.className = "trash-fill bg-green-500";
+            } else if (value < 70) {
+                trashFill.className = "trash-fill bg-yellow-500";
+            } else {
+                trashFill.className = "trash-fill bg-red-500";
+            }
+        }
+
+        setProgress(70);
+    </script>
 @endsection

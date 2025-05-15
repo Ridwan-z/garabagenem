@@ -12,6 +12,65 @@
     <meta name="author" content="LEFT4CODE">
     <title>@yield('title')</title>
     <link rel="stylesheet" href="{{ asset('dist/css/app.css') }}" />
+    <style>
+        .trash-can {
+            position: relative;
+            width: 120px;
+            height: 160px;
+        }
+
+        .trash-lid {
+            position: absolute;
+            width: 140px;
+            height: 20px;
+            border-radius: 6px;
+            left: -10px;
+            top: -20px;
+            z-index: 2;
+        }
+
+        .trash-handle {
+            position: absolute;
+            width: 40px;
+            height: 10px;
+            border-radius: 4px;
+            left: 40px;
+            top: -30px;
+            z-index: 1;
+        }
+
+        .trash-body {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .trash-lines {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: space-evenly;
+            z-index: 3;
+            pointer-events: none;
+        }
+
+        .trash-line {
+            width: 6px;
+            height: 70%;
+            margin-top: 15%;
+            border-radius: 3px;
+        }
+
+        .trash-fill {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            transition: height 0.5s ease-in-out;
+        }
+    </style>
 </head>
 
 <body class="app">
@@ -36,6 +95,7 @@
     </script>
     <script src="https://maps.googleapis.com/maps/api/js?key=[" your-google-map-api"]&libraries=places"></script>
     <script src="{{ asset('dist/js/app.js') }}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 </body>
 
 </html>

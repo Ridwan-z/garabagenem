@@ -8,6 +8,9 @@ class DashboardController extends Controller
 {
     public function index()
     {
-        return view('layout.dashboard');
+        $data = [
+            'menuDashboard' => 'active'
+        ];
+        return view('layout.dashboard', $data);
     }
 }

@@ -6,17 +6,18 @@
     <div class="side-nav__devider my-6"></div>
     <ul>
         <li>
-            <a href="index.html" class="side-menu side-menu--active">
+            <a href="{{ route('dashboard') }}" class="side-menu side-menu--{{ $menuDashboard ?? '' }}">
                 <div class="side-menu__icon"> <i data-feather="home"></i> </div>
                 <div class="side-menu__title"> Dashboard </div>
             </a>
         </li>
+
         <li>
-            <a href="#" class="side-menu side-menu">
-                <div class="side-menu__icon"> <i data-feather="trash"></i> </div>
-                <div class="side-menu__title"> Data Tempat Sampah </div>
+            <a href="{{ route('user') }}" class="side-menu side-menu--{{ $menuUser ?? '' }}">
+                <div class="side-menu__icon"> <i data-feather="user"></i> </div>
+                <div class="side-menu__title"> Data Users</div>
             </a>
         </li>
-
     </ul>
 </nav>
+
