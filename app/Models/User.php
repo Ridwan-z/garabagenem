@@ -33,6 +33,10 @@ class User extends Authenticatable
         'remember_token',
     ];
 
+    public function trash()
+    {
+        return $this->hasOne(Trash::class);
+    }
     /**
      * Get the attributes that should be cast.
      *

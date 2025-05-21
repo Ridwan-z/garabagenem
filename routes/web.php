@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\TrashController;
 use App\Http\Controllers\UserController;
 
 // Route::get('/', function () {
@@ -17,6 +18,11 @@ Route::middleware('checkLogin')->group(function () {
     Route::post('/user/store', [UserController::class, 'store'])->name('userStore');
     Route::post('/user/update/{id}', [UserController::class, 'update'])->name('userUpdate');
     Route::delete('/user/destroy/{id}', [UserController::class, 'destroy'])->name('userDestroy');
+
+    Route::get('/trash', [TrashController::class, 'index'])->name('trash');
+    Route::post('/trash/store', [TrashController::class, 'store'])->name('trashStore');
+    Route::post('/trash/update/{id}', [TrashController::class, 'update'])->name('trashUpdate');
+    Route::delete('/trash/destroy/{id}', [TrashController::class, 'destroy'])->name('trashDestroy');
 });
 
 Route::middleware('isLogin')->group(function () {

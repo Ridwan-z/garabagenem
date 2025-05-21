@@ -1,7 +1,17 @@
 <div class="top-bar">
     <div class="-intro-x breadcrumb mr-auto hidden sm:flex"> <a href="" class="">Application</a> <i
             data-feather="chevron-right" class="breadcrumb__icon"></i>
-        <a href="" class="breadcrumb--active">Dashboard</a>
+        <a href="" class="breadcrumb--active">
+            @if (!empty($menuDashboard))
+                Dashboard
+            @elseif(!empty($menuTrash))
+                Trash
+            @elseif (!empty($menuUser))
+                User
+            @else
+                Not Found
+            @endif
+        </a>
     </div>
     <div class="intro-x relative mr-3 sm:mr-6">
         <div class="search hidden sm:block">

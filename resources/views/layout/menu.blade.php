@@ -10,7 +10,13 @@
                 <div class="side-menu__title"> Dashboard </div>
             </a>
         </li>
-     
+        <li>
+            <a href="{{ route('trash') }}" class="side-menu side-menu--{{ $menuTrash ?? '' }}">
+                <div class="side-menu__icon"> <i data-feather="trash"></i> </div>
+                <div class="side-menu__title"> Data Trash </div>
+            </a>
+        </li>
+
         <li>
             <a href="{{ route('user') }}" class="side-menu side-menu--{{ $menuUser ?? '' }}">
                 <div class="side-menu__icon"> <i data-feather="user"></i> </div>

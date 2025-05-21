@@ -1,7 +1,6 @@
 <nav class="side-nav">
     <a href="" class="intro-x flex items-center pl-5 pt-4">
-        <img alt="Midone Tailwind HTML Admin Template" class="w-6" src="dist/images/logo.svg">
-        <span class="hidden xl:block text-white text-lg ml-3"> Mid<span class="font-medium">one</span> </span>
+        <span class="hidden xl:block text-white text-lg ml-3"> GARBAG<span class="text-md font-bold">ENEM</span> </span>
     </a>
     <div class="side-nav__devider my-6"></div>
     <ul>
@@ -11,7 +10,12 @@
                 <div class="side-menu__title"> Dashboard </div>
             </a>
         </li>
-
+        <li>
+            <a href="{{ route('trash') }}" class="side-menu side-menu--{{ $menuTrash ?? '' }}">
+                <div class="side-menu__icon"> <i data-feather="trash"></i> </div>
+                <div class="side-menu__title"> Data Trash </div>
+            </a>
+        </li>
         <li>
             <a href="{{ route('user') }}" class="side-menu side-menu--{{ $menuUser ?? '' }}">
                 <div class="side-menu__icon"> <i data-feather="user"></i> </div>
@@ -20,4 +24,3 @@
         </li>
     </ul>
 </nav>
-

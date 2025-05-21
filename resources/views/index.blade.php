@@ -15,14 +15,14 @@
     <style>
         .trash-can {
             position: relative;
-            width: 120px;
-            height: 160px;
+            width: 220px;
+            height: 260px;
         }
 
         .trash-lid {
             position: absolute;
-            width: 140px;
-            height: 20px;
+            width: 240px;
+            height: 30px;
             border-radius: 6px;
             left: -10px;
             top: -20px;
@@ -31,11 +31,11 @@
 
         .trash-handle {
             position: absolute;
-            width: 40px;
-            height: 10px;
+            width: 50px;
+            height: 30px;
             border-radius: 4px;
-            left: 40px;
-            top: -30px;
+            left: 85px;
+            top: -35px;
             z-index: 1;
         }
 
@@ -96,6 +96,7 @@
     <script src="https://maps.googleapis.com/maps/api/js?key=[" your-google-map-api"]&libraries=places"></script>
     <script src="{{ asset('dist/js/app.js') }}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+   
 </body>
 
 </html>

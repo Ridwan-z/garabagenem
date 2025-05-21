@@ -62,7 +62,7 @@
                                     <i data-feather="trash-2" class="report-box__icon text-theme-6"></i>
 
                                 </div>
-                                <div class="text-3xl font-bold leading-8 mt-6">3</div>
+                                <div class="text-3xl font-bold leading-8 mt-6">1</div>
                                 <div class="text-base text-gray-600 mt-1">Total Monitored Garbage</div>
                             </div>
                         </div>
@@ -83,8 +83,8 @@
             </div>
 
         </div>
-        <div class="col-span-12 sm:col-span-6 xl:col-span-6 intro-y">
-            <div class="box p-5">
+        <div class="col-span-12 sm:col-span-6 xl:col-span-12 intro-y">
+            <div class="box p-8">
                 <div class="flex justify-center items-end mt-6">
                     <div class="trash-can mb-0">
                         <div class="trash-lid bg-gray-600"></div>
@@ -101,46 +101,53 @@
                 </div>
             </div>
         </div>
-        <div class="col-span-12 sm:col-span-6 xl:col-span-6 intro-y">
-            <div class="box p-5">
-                <div class="flex justify-center items-end mt-6">
-                    <div class="trash-can mb-0">
-                        <div class="trash-lid bg-gray-600"></div>
-                        <div class="trash-handle bg-gray-600"></div>
-                        <div class="trash-body bg-gray-400 border-2 border-gray-600">
-                            <div class="trash-fill bg-green-500" id="trash-fill"></div>
-                            <div class="trash-lines">
-                                <div class="trash-line bg-gray-600"></div>
-                                <div class="trash-line bg-gray-600"></div>
-                                <div class="trash-line bg-gray-600"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
 
-            </div>
-        </div>
 
     </div>
     <script>
         const trashFill = document.getElementById("trash-fill");
 
-        function setProgress(value) {
-            updateProgress(value);
+        function setProgress(sensorValue) {
+            // Konversi value ke dalam persen dari maksimum 50
+            let percentage = Math.max(0, Math.min(100, ((30 - sensorValue) / (30 - 3)) * 100));
+            updateProgress(percentage);
         }
 
         function updateProgress(value) {
             trashFill.style.height = `${value}%`;
 
-            if (value < 30) {
-                trashFill.className = "trash-fill bg-green-500";
-            } else if (value < 70) {
-                trashFill.className = "trash-fill bg-yellow-500";
+            if (value > 70) {
+                trashFill.className = "trash-fill bg-red-500"; // Penuh
+            } else if (value > 30) {
+                trashFill.className = "trash-fill bg-yellow-500"; // Sedang
             } else {
-                trashFill.className = "trash-fill bg-red-500";
+                trashFill.className = "trash-fill bg-green-500"; // Kosong
             }
         }
 
-        setProgress(70);
+        // Default untuk testing (hapus jika tidak diperlukan)
+        // setProgress(10);
+    </script>
+
+
+    <script src="https://js.pusher.com/8.4.0/pusher.min.js"></script>
+    <script>
+        // Enable pusher logging - jangan gunakan ini di production
+        Pusher.logToConsole = true;
+
+        // Inisialisasi Pusher
+        var pusher = new Pusher('c9ecbae8bfc47ce823dd', {
+            cluster: 'mt1'
+        });
+
+        // Subscribe ke channel 'sensor-channel'
+        var channel = pusher.subscribe('sensor-channel');
+
+        // Mendengarkan event 'sensor-data'
+        channel.bind('sensor-data', function(data) {
+
+            const sensorValue = data.data.value;
+            setProgress(sensorValue);
+        });
     </script>
 @endsection
