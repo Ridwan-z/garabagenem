@@ -1,6 +1,6 @@
 @extends('index')
 
-@section('title', 'GARBAGENEM | Dashboard')
+@section('title', 'Smart DustBIN | Dashboard')
 
 @section('content')
     @if (session('login_success'))
@@ -34,7 +34,7 @@
         </script>
     @endif
     <div class="grid grid-cols-12 gap-6">
-        <div class="col-span-12 xxl:col-span-9 grid grid-cols-12 gap-6">
+        {{-- <div class="col-span-12 xxl:col-span-9 grid grid-cols-12 gap-6">
             <div class="col-span-12 mt-8">
                 <div class="intro-y flex items-center h-10">
                     <h2 class="text-lg font-medium truncate mr-5">
@@ -70,7 +70,7 @@
 
                 </div>
             </div>
-        </div>
+        </div> --}}
         <div class="col-span-12 mt-8">
             <div class="intro-y block sm:flex items-center h-10">
                 <h2 class="text-lg font-medium truncate mr-5">
@@ -109,7 +109,7 @@
 
         function setProgress(sensorValue) {
             // Konversi value ke dalam persen dari maksimum 50
-            let percentage = Math.max(0, Math.min(100, ((30 - sensorValue) / (30 - 3)) * 100));
+            let percentage = Math.max(0, Math.min(100, ((20 - sensorValue) / (20 - 3)) * 100));
             updateProgress(percentage);
         }
 
