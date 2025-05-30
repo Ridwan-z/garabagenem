@@ -45,7 +45,6 @@
 
             <a href="{{ url('/') }}" class="logo d-flex align-items-center me-auto">
                 <!-- Uncomment the line below if you also wish to use an image logo -->
-                <img src="{{ asset('assets/img/logo.png') }}" alt="">
                 <h1 class="sitename">Smart DustBIN</h1>
             </a>
 
@@ -77,7 +76,7 @@
                         <p data-aos="fade-up" data-aos-delay="100">Smart DustBIN membantu masyarakat dalam mengelola
                             sampah secara efisien dengan sistem pemantauan real-time berbasis teknologi sensor.</p>
                         <div class="d-flex flex-column flex-md-row" data-aos="fade-up" data-aos-delay="200">
-                            <a href="#about" class="btn-get-started">Mulaifj <i class="bi bi-arrow-right"></i></a>
+                            <a href="#about" class="btn-get-started">Mulai<i class="bi bi-arrow-right"></i></a>
                             <a href="https://www.youtube.com/watch?v=Y7f98aduVJ8"
                                 class="glightbox btn-watch-video d-flex align-items-center justify-content-center ms-0 ms-md-4 mt-4 mt-md-0"><i
                                     class="bi bi-play-circle"></i><span>Tonton Video</span></a>
@@ -111,19 +110,19 @@
                                 tempat sampah hampir penuh, sehingga pengelolaan sampah menjadi lebih efisien, cepat,
                                 dan ramah lingkungan.
                             </p>
-                            <div class="text-center text-lg-start">
+                            {{-- <div class="text-center text-lg-start">
                                 <a href="#about"
                                     class="btn-read-more d-inline-flex align-items-center justify-content-center align-self-center">
                                     <span>Read More</span>
                                     <i class="bi bi-arrow-right"></i>
                                 </a>
-                            </div>
+                            </div> --}}
                         </div>
 
                     </div>
 
                     <div class="col-lg-6 d-flex align-items-center" data-aos="zoom-out" data-aos-delay="200">
-                        <img src="{{ asset('assets/img/about.jpg') }}" class="img-fluid" alt="">
+                        <img src="{{ asset('assets/img/tim.jpg') }}" class="img-fluid" alt="">
                     </div>
 
                 </div>
@@ -362,64 +361,67 @@
 
                 <div class="row gy-5">
 
-                    <div class="col-xl-4 col-md-6">
+                    <div class="col-xl-3 col-md-6">
                         <div class="post-item position-relative h-100" data-aos="fade-up" data-aos-delay="100">
 
                             <div class="post-img position-relative overflow-hidden">
-                                <img src="{{ asset('assets/img/blog/blog-1.jpg') }}" class="img-fluid"
-                                    alt="">
-                                <span class="post-date">December 12</span>
+                                <img src="{{ asset('assets/img/ngoding.jpg') }}" class="img-fluid" alt="">
+                                <span class="post-date">25 Mei</span>
                             </div>
 
                             <div class="post-content d-flex flex-column">
-
-                                <h3 class="post-title">Eum ad dolor et. Autem aut fugiat debitis</h3>
-
-
+                                <h3 class="post-title">Pengembangan Website Smart DustBIN</h3>
                             </div>
 
                         </div>
                     </div><!-- End post item -->
 
-                    <div class="col-xl-4 col-md-6">
+                    <div class="col-xl-3 col-md-6">
                         <div class="post-item position-relative h-100" data-aos="fade-up" data-aos-delay="200">
 
                             <div class="post-img position-relative overflow-hidden">
-                                <img src="{{ asset('assets/img/blog/blog-2.jpg') }}" class="img-fluid"
-                                    alt="">
-                                <span class="post-date">July 17</span>
+                                <img src="{{ asset('assets/img/bor.jpg') }}" class="img-fluid" alt="">
+                                <span class="post-date">28 Mei</span>
                             </div>
 
                             <div class="post-content d-flex flex-column">
-
-                                <h3 class="post-title">Et repellendus molestiae qui est sed omnis</h3>
-
-
-
+                                <h3 class="post-title">Proses Pengeboran pada PCB yang Telah Dibuat</h3>
                             </div>
 
                         </div>
                     </div><!-- End post item -->
 
-                    <div class="col-xl-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
                         <div class="post-item position-relative h-100">
 
                             <div class="post-img position-relative overflow-hidden">
-                                <img src="{{ asset('assets/img/blog/blog-3.jpg') }}" class="img-fluid"
-                                    alt="">
-                                <span class="post-date">September 05</span>
+                                <img src="{{ asset('assets/img/rangkai.jpg') }}" class="img-fluid" alt="">
+                                <span class="post-date">28 Mei</span>
                             </div>
 
                             <div class="post-content d-flex flex-column">
+                                <h3 class="post-title">Perakitan PCB Setelah Proses Penyolderan</h3>
+                            </div>
 
-                                <h3 class="post-title">Quia assumenda est et veritati tirana ploder</h3>
+                        </div>
+                    </div><!-- End post item -->
+                    <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                        <div class="post-item position-relative h-100">
 
+                            <div class="post-img position-relative overflow-hidden">
+                                <img src="{{ asset('assets/img/evaluasi.jpg') }}" class="img-fluid" alt="">
+                                <span class="post-date">28 Mei</span>
+                            </div>
+
+                            <div class="post-content d-flex flex-column">
+                                <h3 class="post-title">Proses Diskusi dan Pengujian proyek Smart DustBIN </h3>
                             </div>
 
                         </div>
                     </div><!-- End post item -->
 
                 </div>
+
 
             </div>
 

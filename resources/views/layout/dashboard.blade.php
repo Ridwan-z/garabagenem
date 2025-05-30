@@ -74,7 +74,7 @@
         <div class="col-span-12 mt-8">
             <div class="intro-y block sm:flex items-center h-10">
                 <h2 class="text-lg font-medium truncate mr-5">
-                    Garbage Bin Volume Chart
+                    Volume Dustbin
                 </h2>
                 {{-- <div class="sm:ml-auto mt-3 sm:mt-0 relative text-gray-700">
                     <i data-feather="calendar" class="w-4 h-4 z-10 absolute my-auto inset-y-0 ml-3 left-0"></i>
@@ -104,6 +104,7 @@
 
 
     </div>
+
     <script>
         const trashFill = document.getElementById("trash-fill");
 
@@ -124,13 +125,8 @@
                 trashFill.className = "trash-fill bg-green-500"; // Kosong
             }
         }
-
-        // Default untuk testing (hapus jika tidak diperlukan)
-        // setProgress(10);
     </script>
 
-
-    <script src="https://js.pusher.com/8.4.0/pusher.min.js"></script>
     <script>
         // Enable pusher logging - jangan gunakan ini di production
         Pusher.logToConsole = true;
@@ -150,4 +146,6 @@
             setProgress(sensorValue);
         });
     </script>
+    <script src="https://js.pusher.com/8.4.0/pusher.min.js"></script>
+
 @endsection
