@@ -12,6 +12,8 @@
     <meta name="author" content="LEFT4CODE">
     <title>@yield('title')</title>
     <link rel="stylesheet" href="{{ asset('dist/css/app.css') }}" />
+    <!-- Flatpickr CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/litepicker/dist/css/litepicker.css" />
     <style>
         .trash-can {
             position: relative;
@@ -68,7 +70,7 @@
             position: absolute;
             bottom: 0;
             width: 100%;
-            transition: height 0.5s ease-in-out;
+            transition: height 0.2s ease-in-out;
         }
     </style>
 </head>
@@ -96,7 +98,8 @@
     <script src="https://maps.googleapis.com/maps/api/js?key=[" your-google-map-api"]&libraries=places"></script>
     <script src="{{ asset('dist/js/app.js') }}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-   
+    <!-- Flatpickr JS -->
+    <script src="https://cdn.jsdelivr.net/npm/litepicker/dist/bundle.js"></script>
 </body>
 
 </html>

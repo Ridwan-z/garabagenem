@@ -176871,95 +176871,70 @@ All methods returned accept two arguments, the source string and an options obje
                     (function ($) {
                         "use strict"; // Chart
 
-                        if ($("#report-line-chart").length) {
-                            var ctx =
-                                $("#report-line-chart")[0].getContext("2d");
-                            var myChart =
-                                new chart_js__WEBPACK_IMPORTED_MODULE_1___default.a(
-                                    ctx,
-                                    {
-                                        type: "line",
-                                        data: {
-                                            labels: [
-                                                "00:00",
-                                                "02:00",
-                                                "04:00",
-                                                "06:00",
-                                                "08:00",
-                                                "10:00",
-                                                "12:00",
-                                                "14:00",
-                                                "16:00",
-                                                "18:00",
-                                                "20:00",
-                                                "22:00",
-                                            ],
-                                            datasets: [
-                                                {
-                                                    label: "# of Votes",
-                                                    data: [
-                                                        0, 20, 25, 20, 50, 45,
-                                                        85, 90, 95, 70, 90, 100,
-                                                    ],
-                                                    borderWidth: 2,
-                                                    borderColor: "#3160D8",
-                                                    backgroundColor:
-                                                        "transparent",
-                                                    pointBorderColor:
-                                                        "transparent",
-                                                },
-                                            ],
-                                        },
-                                        options: {
-                                            legend: {
-                                                display: false,
-                                            },
-                                            scales: {
-                                                xAxes: [
-                                                    {
-                                                        ticks: {
-                                                            fontSize: "12",
-                                                            fontColor:
-                                                                "#777777",
-                                                        },
-                                                        gridLines: {
-                                                            display: false,
-                                                        },
-                                                    },
-                                                ],
-                                                yAxes: [
-                                                    {
-                                                        ticks: {
-                                                            fontSize: "12",
-                                                            fontColor:
-                                                                "#777777",
-                                                            beginAtZero: true,
-                                                            max: 100, // batas atas sumbu Y
-                                                            stepSize: 20, // jarak antar label
-                                                            callback: function (
-                                                                value
-                                                            ) {
-                                                                return (
-                                                                    value + "%"
-                                                                );
-                                                            },
-                                                        },
-                                                        gridLines: {
-                                                            color: "#D8D8D8",
-                                                            zeroLineColor:
-                                                                "#D8D8D8",
-                                                            borderDash: [2, 2],
-                                                            zeroLineBorderDash:
-                                                                [2, 2],
-                                                            drawBorder: false,
-                                                        },
-                                                    },
-                                                ],
-                                            },
-                                        },
-                                    }
-                                );
-                        }
+                        //                     if ($("#report-line-chart").length) {
+                        //     fetch("/api/chart/volume")
+                        //         .then((res) => res.json())
+                        //         .then((volumeData) => {
+                        //             const labels = [
+                        //                 "00:00", "02:00", "04:00", "06:00", "08:00", "10:00",
+                        //                 "12:00", "14:00", "16:00", "18:00", "20:00", "22:00"
+                        //             ];
+
+                        //             // Ambil hanya jam genap
+                        //             const filteredData = [];
+                        //             for (let i = 0; i < 24; i += 2) {
+                        //                 const hour = String(i).padStart(2, '0');
+                        //                 filteredData.push(volumeData[hour] || 0);
+                        //             }
+
+                        //             var ctx = $("#report-line-chart")[0].getContext("2d");
+                        //             new Chart(ctx, {
+                        //                 type: "line",
+                        //                 data: {
+                        //                     labels: labels,
+                        //                     datasets: [{
+                        //                         label: "Rata-rata Volume",
+                        //                         data: filteredData,
+                        //                         borderWidth: 2,
+                        //                         borderColor: "#3160D8",
+                        //                         backgroundColor: "transparent",
+                        //                         pointBorderColor: "transparent",
+                        //                     }],
+                        //                 },
+                        //                 options: {
+                        //                     legend: { display: false },
+                        //                     scales: {
+                        //                         xAxes: [{
+                        //                             ticks: {
+                        //                                 fontSize: "12",
+                        //                                 fontColor: "#777777",
+                        //                             },
+                        //                             gridLines: { display: false },
+                        //                         }],
+                        //                         yAxes: [{
+                        //                             ticks: {
+                        //                                 fontSize: "12",
+                        //                                 fontColor: "#777777",
+                        //                                 beginAtZero: true,
+                        //                                 max: 100,
+                        //                                 stepSize: 20,
+                        //                                 callback: (value) => value + "%",
+                        //                             },
+                        //                             gridLines: {
+                        //                                 color: "#D8D8D8",
+                        //                                 zeroLineColor: "#D8D8D8",
+                        //                                 borderDash: [2, 2],
+                        //                                 zeroLineBorderDash: [2, 2],
+                        //                                 drawBorder: false,
+                        //                             },
+                        //                         }],
+                        //                     },
+                        //                 },
+                        //             });
+                        //         });
+                        // }
+
+                        
 
                         if ($("#report-pie-chart").length) {
                             var _ctx =

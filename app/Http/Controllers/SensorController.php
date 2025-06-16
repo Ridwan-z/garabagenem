@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Events\SensorDataReceived;
 use Illuminate\Support\Facades\Log;  // Pastikan untuk mengimpor log
+use Illuminate\Support\Facades\DB;
+use Carbon\Carbon;
 
 class SensorController extends Controller
 {
@@ -16,6 +18,25 @@ class SensorController extends Controller
 
             // Log data yang diterima
             Log::info('Data Sensor diterima: ', $data);
+
+            if (isset($data['sensor'], $data['value'])) {
+                $sensor = $data['sensor'];
+                $value = $data['value'];
+
+                if ($sensor === 'ir') {
+                    // Simpan ke tabel open_and_close
+                    DB::table('open_and_close')->insert([
+                        'status' => (bool) $value,
+                        'created_at' => Carbon::now()->toDateString(), // hanya tanggal
+                    ]);
+                } elseif ($sensor === 'ultrasonik') {
+                    // Simpan ke tabel volume
+                    DB::table('volume')->insert([
+                        'volume' => $value,
+                        'created_at' => Carbon::now(), // full timestamp
+                    ]);
+                }
+            }
 
             // Broadcast tanpa menyimpan
             broadcast(new SensorDataReceived($data))->toOthers();
